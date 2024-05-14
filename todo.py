@@ -1,4 +1,17 @@
-def main():
+def add_task(name, description, priority, time, status):
+    todo = load_tasks()
+    task_id = len(tasks) + 1
+    task = {
+        'id': task_id,
+        'name': name,
+        'description': description,
+        'priority': priority,
+        'time': time,
+        'status': status
+    }
+    todo.append(task)
+    print("Task added successfully.")
+    def main():
     tasks = load_tasks()
     while True:
         print("\nTODO App")
@@ -13,7 +26,7 @@ def main():
         
         choice = input("Enter your choice: ")
         if choice == '1':
-            create_task(tasks)
+            add_task(tasks)
         elif choice == '2':
             list_tasks(tasks)
         elif choice == '3':
